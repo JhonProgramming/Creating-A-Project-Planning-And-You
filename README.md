@@ -163,3 +163,13 @@ foreach (DataRow dr in datatablename.Rows)
 datatype variablename = (cast data type)(dr["column name"]); - regular get from datatable
 string variable = dr["column"] != DBNull.Value ? (string)(dr["column"]) : "N/A"; - conditional get from datatable (gets data, if column for that row is blank, sets it as "N/A")
 make sure to do anything with the data in the foreach loop
+radio buttons:
+private void chkTempFilter_CheckedChanged(object sender, EventArgs e) <--- event for when a radiobutton is checked / unchecked
+            var TempRadioButtons = gbxTempFilters.Controls.OfType<RadioButton>();  <---- put at the top of the program, where the initialize is, gets all radiotbuttons in specified group box and stores them together
+            foreach (RadioButton item in TempRadioButtons) 
+            { 
+                item.CheckedChanged += TempFilters_CheckedChanged; 
+            } 
+            
+            string checkedName = ((RadioButton)sender).Name;  <-- use these in the checked change event to detect which ones are checked or not and do stuff baesd on that
+            if (checkedName == "rbtnSpeedGreater") 
