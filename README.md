@@ -73,3 +73,93 @@ list the different types of testing that will be done (e.g security, funcitonali
 give brief description of the tests done for each test type (e.g functionality testing is check input validation, check error handling, etc)
 -------------------------------------------------------------------------------------------
 
+Part B - Creating The Prototype:
+
+-------------------------------------------------------------------------------------------
+general stuff: 
+coding the program
+need to follow the plan but do need to strictly stick to it
+2 languages (c# & SQL)
+interface good
+include good  comments
+use lots of error handling
+use input / data validation
+keep namimg conventions simple, short and relevant
+use functions and classes where possible
+------------------------------------------------------------------------------------------
+programming notes:
+-----------------------------------------------------------------------------------------
+SQL:
+sql connection string:
+string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = file path ; Integrated Security = True; Connect Timeout = 30"; 
+SqlConnection sqlConnection = new SqlConnection(connectionString);
+sql command:
+SqlCommand command = new SqlCommand("command name", sqlConnection); 
+command.CommandType = CommandType.StoredProcedure; 
+passing paramters to sql command:
+command.Parameters.AddWithValue("@parameter", variable);
+using insert, update, delete commads:
+sqlConnection.Open(); 
+command.ExecuteNonQuery(); 
+sqlConnection.Close(); 
+using select command (putting it into datatable):
+SqlDataAdapter sd = new SqlDataAdapter(cmd);
+sqlConnection.Open(); 
+sd.Fill(datatable name); 
+sqlConnection.Close(); 
+stored procedures:
+Create procedure [dbo].[procedure name] 
+( 
+@param1 type, 
+@param2 type 
+) 
+as 
+begin 
+sql command
+End 
+insert:
+insert into table name values @param1, @param2 
+select:
+select * from table name (where____ if neccessary)
+delete:
+Delete from table name (where___ if neccessary) 
+update:
+Update table name 
+set column=@param1, 
+column=@param2 
+(where___ if neccessary)
+---------------------------------------------------------------------------------------------
+APIs:
+private const string API_KEY = " API KEY HERE";
+string Url = "http://api.openweathermap.org/data/2.5/forecast?" (<--- replace with API site url) + "q=" + city (<-- parameters) + "&mode=xml&units=metric&APPID=" + API_KEY;
+getting data from API:
+            // Get the response string from the URL. 
+             (function-->)GetForecast(**client.DownloadString(ForecastUrl)** (<-- important bit)); 
+        } 
+        
+        // Display the forecast. 
+        private void GetForecast(string xml) 
+        { 
+            // Load the response into an XML document. 
+            XmlDocument xmlDoc = new XmlDocument(); 
+            xmlDoc.LoadXml(xml);  (<--- putting data from API into xml document)
+
+              foreach (XmlNode timeNode in xmlDoc.SelectNodes("//time (API header thing)")) 
+            { 
+                // Get the time in UTC. 
+                DateTime time = DateTime.Parse(timeNode.Attributes["from"].Value); 
+                // Get the temperature. 
+                XmlNode tempNode = timeNode.SelectSingleNode("temperature (subsection of each data entry)");
+                string temp = tempNode.Attributes["value"].Value; (<--- specific bit of data from subsection)
+                // Get the temperature. 
+                XmlNode windSpeedNode = timeNode.SelectSingleNode("windSpeed"); 
+                string windSpeed = windSpeedNode.Attributes["mps"].Value; 
+---------------------------------------------------------------------------------------------
+general:
+empty text box:
+txtPeople.Text = string.Empty; 
+getting rows from datatable:
+foreach (DataRow dr in datatablename.Rows) 
+datatype variablename = (cast data type)(dr["column name"]); - regular get from datatable
+string variable = dr["column"] != DBNull.Value ? (string)(dr["column"]) : "N/A"; - conditional get from datatable (gets data, if column for that row is blank, sets it as "N/A")
+make sure to do anything with the data in the foreach loop
