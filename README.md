@@ -180,4 +180,7 @@ private void chkTempFilter_CheckedChanged(object sender, EventArgs e) <--- event
 
              if (rbtnGreaterTemp.Checked) <-- conditional based on if radiobutton is checked, works for check boxes as well
 
+add visual basic to project:
+![image](https://github.com/user-attachments/assets/0394bcbe-2493-4c7b-b7ee-cd097f5942e8)
+right click on the project name, go to add, go to references, search for microsoft visual basic
 
