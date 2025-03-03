@@ -173,3 +173,5 @@ private void chkTempFilter_CheckedChanged(object sender, EventArgs e) <--- event
             
             string checkedName = ((RadioButton)sender).Name;  <-- use these in the checked change event to detect which ones are checked or not and do stuff baesd on that
             if (checkedName == "rbtnSpeedGreater") 
+
+             if (rbtnGreaterTemp.Checked) <-- conditional based on if radiobutton is checked, works for check boxes as well
