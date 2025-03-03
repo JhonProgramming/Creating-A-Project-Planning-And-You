@@ -154,6 +154,8 @@ getting data from API:
                 // Get the temperature. 
                 XmlNode windSpeedNode = timeNode.SelectSingleNode("windSpeed"); 
                 string windSpeed = windSpeedNode.Attributes["mps"].Value; 
+                ![image](https://github.com/user-attachments/assets/0dd869ef-9827-4440-a6b4-ed92d4a2bfec)
+                ^what the API data page thing looks like, useful for figuring out what to put when getting data from the xml
 ---------------------------------------------------------------------------------------------
 general:
 empty text box:
@@ -176,4 +178,4 @@ private void chkTempFilter_CheckedChanged(object sender, EventArgs e) <--- event
 
              if (rbtnGreaterTemp.Checked) <-- conditional based on if radiobutton is checked, works for check boxes as well
 
-![image](https://github.com/user-attachments/assets/0dd869ef-9827-4440-a6b4-ed92d4a2bfec)
+
