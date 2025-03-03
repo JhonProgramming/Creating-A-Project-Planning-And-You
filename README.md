@@ -162,6 +162,11 @@ getting data from API:
 general:
 empty text box:
 txtPeople.Text = string.Empty; 
+conditionals:
+if ((username==checkUser) && (password==checkPass)) <-- condition 1 AND condition 2
+! <- not condition
+^ <- XOR
+|| <- OR
 getting rows from datatable:
 foreach (DataRow dr in datatablename.Rows) 
 datatype variablename = (cast data type)(dr["column name"]); - regular get from datatable
@@ -183,4 +188,61 @@ private void chkTempFilter_CheckedChanged(object sender, EventArgs e) <--- event
 add visual basic to project:
 ![image](https://github.com/user-attachments/assets/0394bcbe-2493-4c7b-b7ee-cd097f5942e8)
 right click on the project name, go to add, go to references, search for microsoft visual basic
+string input = Interaction.InputBox("Prompt", "Title", "Default"); <-- code for input box
+----------------------------------------------------------------------------------------------------
+Multiple forms:
+make second or third or fourth, etc, etc form
+give it a name
+CreateAccountForm create = new CreateAccountForm(); <--- put this at the top of the program to create the new forms (replace names with your own)
+do this for every form you need
+ private void btnLogIn_Click(object sender, EventArgs e) <- button click
+ {
+     if (logIn.ShowDialog() <- opens the form with the dialogue option == DialogResult.OK <- if the result on page close is OK) <- conditional using the result from the form
+     {
+         MessageBox.Show("Successful Log In");
+         this.Hide(); <- makes the form invisible but does not close it entirely (closing the initial form1 just shuts the entire program down)
+         if (main.ShowDialog() == DialogResult.OK)
+         {
+             this.Close(); <- fully closes the relevant form
+         }
+     }
+ }
 
+if (check) <- put this stuff at the end of the new form(s) code
+both options close the current form down 
+dont need both can just have ok or close
+{ 
+    this.DialogResult = DialogResult.OK; <- can be used for conditionals in the program that called the form to open
+}
+else
+{
+    this.DialogResult= DialogResult.Cancel;
+}
+use sql databases for transmitting data between forms (its just easier this way)
+if you wanna put text in textboxes between forms use this:
+public static TextBox test = new TextBox(); <- put this at the top of the code to create a textbox variable
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            test = txtTest; <- put this in the form load event and set the variable to the name of a textbox in the form
+        }
+
+        Form1.test.Text = "test"; <- put this in the other form (replacing names as neccessary) to put the text into the textbox
+        same thing might work for other variables but its dubious
+-----------------------------------------------------------------------------
+documentation of process:
+as going along and making the program, take screenshots of the code and the outputs and put them in a document, add comments to the document to help explain the code and whats happening a bit more
+do it logically, in order
+use it to show iterative developement of the program
+---------------------------------------------------------------------------
+testing:
+follow the test plan and test the prototype, leave this till near the end but leave yourself some time to do the testing and make adjustments based on it
+test the things you said in your test plan, doing a bunch of different tests
+include whats being tested and the result of the test
+include any notes such as things you realised or things your going to change based on the test
+retest parts that have been changed
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Task 3A - gathering feedback:
+
+--------------------------------------------------------------------------------
