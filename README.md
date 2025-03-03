@@ -154,7 +154,9 @@ getting data from API:
                 // Get the temperature. 
                 XmlNode windSpeedNode = timeNode.SelectSingleNode("windSpeed"); 
                 string windSpeed = windSpeedNode.Attributes["mps"].Value; 
-                ![image](https://github.com/user-attachments/assets/0dd869ef-9827-4440-a6b4-ed92d4a2bfec)
+                
+                ![image](https://github.com/user-attachments/assets/bd4f5caa-f3a9-49b4-9dc7-202ca9996181)
+
                 ^what the API data page thing looks like, useful for figuring out what to put when getting data from the xml
 ---------------------------------------------------------------------------------------------
 general:
