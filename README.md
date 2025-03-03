@@ -128,7 +128,7 @@ Update table name
 set column=@param1, 
 column=@param2 
 (where___ if neccessary)
----------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
 APIs:
 private const string API_KEY = " API KEY HERE";
 string Url = "http://api.openweathermap.org/data/2.5/forecast?" (<--- replace with API site url) + "q=" + city (<-- parameters) + "&mode=xml&units=metric&APPID=" + API_KEY;
