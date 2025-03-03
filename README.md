@@ -8,6 +8,7 @@ Make it all relevent to the project you are designing
 ---------------------------------------------------------------------------------------
 Part A - Project Proposal:
 ---------------------------------------------------------------------------------------
+both parts in 20 hours, 10 -10 split at worst but try for closer to 7-13 cause the design takes longer
 Business Context:
 SWOT analysis of project
 Naming + explanation of stakeholders in project
@@ -189,6 +190,11 @@ add visual basic to project:
 ![image](https://github.com/user-attachments/assets/0394bcbe-2493-4c7b-b7ee-cd097f5942e8)
 right click on the project name, go to add, go to references, search for microsoft visual basic
 string input = Interaction.InputBox("Prompt", "Title", "Default"); <-- code for input box
+error handling:
+try - catch - finally
+try {} <- block of code
+catch (exception e) {} <- block of code to do on exception catch, can specify what exception to catch and can have multiple catches for different exceptions
+finally {} <- executes block after try - catch regardless of outcome
 ----------------------------------------------------------------------------------------------------
 Multiple forms:
 make second or third or fourth, etc, etc form
