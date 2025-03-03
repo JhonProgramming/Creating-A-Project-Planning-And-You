@@ -175,3 +175,5 @@ private void chkTempFilter_CheckedChanged(object sender, EventArgs e) <--- event
             if (checkedName == "rbtnSpeedGreater") 
 
              if (rbtnGreaterTemp.Checked) <-- conditional based on if radiobutton is checked, works for check boxes as well
+
+![image](https://github.com/user-attachments/assets/0dd869ef-9827-4440-a6b4-ed92d4a2bfec)
