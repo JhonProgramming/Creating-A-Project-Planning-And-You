@@ -234,6 +234,16 @@ public static TextBox test = new TextBox(); <- put this at the top of the code t
 
         Form1.test.Text = "test"; <- put this in the other form (replacing names as neccessary) to put the text into the textbox
         same thing might work for other variables but its dubious
+----------------------------------------------------------------------------
+random numbers:
+ private void btnRand_Click(object sender, EventArgs e)
+ {
+     Random rdn = new Random();
+     int num = rdn.Next(0, 10); //<-- min <= random < max
+
+     double fl = rdn.NextDouble(); //<-- stupid long decimal
+     fl = Math.Truncate(10 * fl) / 10; //<-- times by x, then truncate, then divide by x to get x number of decimal places (10 for 1 dp, 100 for 2 dp, etc)
+ }
 -----------------------------------------------------------------------------
 documentation of process:
 as going along and making the program, take screenshots of the code and the outputs and put them in a document, add comments to the document to help explain the code and whats happening a bit more
